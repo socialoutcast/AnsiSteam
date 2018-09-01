@@ -5,3 +5,22 @@
    tasks:
      - name: Install Insurgency
        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/insurgency +app_update 237410 +validate +quit
+
+     - name: Install Server.cfg
+       copy:
+         src: ~/steamserver/configs/ins.cfg
+         dest: /home/steam/insurgency/insurgency/cfg/server.cfg
+         owner: steam
+         group: steam
+         mode: 0755
+
+     - name: Install Scripts
+       copy:
+         src: ~/steamserver/scripts/ins_start.sh
+         dest: /home/steam/insurgency/ins_start.sh
+         owner: steam
+         group: steam
+         mode: 0755
+
+     - name: Start Server
+       shell: /home/steam/insurgency/ins_start.sh
