@@ -2,7 +2,6 @@
  - hosts: linux*
    become: true
    tasks:
-
    - name: Setup New Steam User
      user:
        name: steam
@@ -10,33 +9,28 @@
  - hosts: linuxsteamcmd
    become: true
    tasks:
-
    - name: Install Libraries
      yum:
         name=glibc.i686
         name=libstdc++.i686
         name=screen
         state=latest
-
    - name: Create steam DIR
      file:
       path: /tmp/steamcmd
       state: directory
       owner: steam
       mode: 0755
-
    - name: Download steamcmd
      unarchive:
        remote_src: yes
        src: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
        dest: /tmp/steamcmd
-
    - name: Change Owner of steamcmd
      file:
        dest: /tmp/steamcmd/
        owner: steam
        mode: 0755
        recurse: yes
-
    - name: Setup SteamCMD
      shell: /tmp/steamcmd/steamcmd.sh +login anonymous +quit
