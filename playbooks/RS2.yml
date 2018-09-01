@@ -1,0 +1,6 @@
+---
+ - hosts: rs2
+   become_user: steam
+   tasks:
+     - name: Install Rising Storm 2
+       shell: /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir ./rs2_ds +app_update 418480 validate +quit
