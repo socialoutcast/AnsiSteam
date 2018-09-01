@@ -2,5 +2,5 @@
 steamserver1.s3cn3t.net ansible_host=192.168.1.4 ansible_user=bkrause
 steamserver2.s3cn3t.net ansible_host=192.168.1.7 ansible_user=bkrause
 
-[rs2]
+[squad]
 steamserver1.s3cn3t.net ansible_host=192.168.1.4 ansible_user=bkrause

@@ -1,0 +1,7 @@
+---
+ - hosts: squad
+   become: true
+   become_user: steam
+   tasks:
+     - name: Install Squad
+       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/squad +app_update 403240 +validate +quit
