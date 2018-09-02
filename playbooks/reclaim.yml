@@ -1,0 +1,12 @@
+---
+ - hosts: linux*
+   become: true
+   tasks:
+     - name: Reclaim SteamCMD Server
+       file:
+         path: /home/steam/{{ item }}
+         state: absent
+       with_items:
+         - Steam
+         - squad
+         - insurgency
