@@ -21,6 +21,3 @@
          owner: steam
          group: steam
          mode: 0755
-
-     - name: Start Server
-       shell: /home/steam/insurgency/ins_start.sh
