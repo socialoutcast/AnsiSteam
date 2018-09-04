@@ -1,6 +1,8 @@
 [linuxsteamcmd]
 steamserver1.s3cn3t.net ansible_host=192.168.1.4 ansible_user=bkrause
 steamserver2.s3cn3t.net ansible_host=192.168.1.7 ansible_user=bkrause
+steamserver3.s3cn3t.net ansible_host=192.168.1.8 ansible_user=bkrause
+steamserver4.s3cn3t.net ansible_host=192.168.1.9 ansible_user=bkrause
 
 [squad]
 steamserver1.s3cn3t.net ansible_host=192.168.1.4 ansible_user=bkrause
