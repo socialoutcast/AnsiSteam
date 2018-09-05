@@ -12,3 +12,4 @@ steamserver2.s3cn3t.net ansible_host=192.168.1.7 ansible_user=bkrause
 
 [kf2]
 steamserver3.s3cn3t.net ansible_host=192.168.1.8 ansible_user=bkrause
+steamserver4.s3cn3t.net ansible_host=192.168.1.9 ansible_user=bkrause
