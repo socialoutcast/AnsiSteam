@@ -6,18 +6,18 @@
      - name: Install KillingFloor 2
        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/kf2 +app_update 232130 +validate +quit
 
-#     - name: Install Server.cfg
-#       copy:
-#         src: ~/steamserver/configs/kf2.cfg
-#         dest: /home/steam/insurgency/insurgency/cfg/server.cfg
-#         owner: steam
-#        group: steam
-#         mode: 0755
+     - name: Install Server.cfg
+       copy:
+         src: ~/steamserver/configs/kf2.cfg
+         dest: /home/steam/insurgency/insurgency/cfg/server.cfg
+         owner: steam
+        group: steam
+         mode: 0755
 
-#     - name: Install Scripts
-#       copy:
-#         src: ~/steamserver/scripts/ins_start.sh
-#         dest: /home/steam/insurgency/ins_start.sh
-#         owner: steam
-#         group: steam
-#         mode: 0755
+     - name: Install Scripts
+       copy:
+         src: ~/steamserver/scripts/ins_start.sh
+         dest: /home/steam/insurgency/ins_start.sh
+         owner: steam
+         group: steam
+         mode: 0755
