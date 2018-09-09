@@ -5,3 +5,4 @@ venv
 *.pyc
 *.md
 *.retry
+inv
