@@ -19,6 +19,11 @@
         - libstdc++.i686
         - screen
 
+   - name: Yum Update
+     yum:
+       name: '*'
+       state: latest
+
    - name: Create steam DIR
      file:
       path: /tmp/steamcmd
