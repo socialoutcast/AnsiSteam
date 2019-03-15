@@ -14,7 +14,7 @@
            group: steam
            mode: 0755
          with_fileglob:
-           - ~/steamserver/squad_conf/*.*
+         - ~/steamserver/squad_conf/*.*
 
      - name: Install Scripts
          copy:
