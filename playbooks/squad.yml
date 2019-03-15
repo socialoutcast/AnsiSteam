@@ -5,3 +5,21 @@
    tasks:
      - name: Install Squad
        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/squad +app_update 403240 +validate +quit
+
+     - name: Install Server.cfg
+         copy:
+           src: "{{ item }}"
+           dest: /home/steam/squad/Squad/ServerConfig/
+           owner: steam
+           group: steam
+           mode: 0755
+         with_fileglob:
+           - ~/steamserver/squad_conf/*.*
+
+     - name: Install Scripts
+         copy:
+           src: ~/steamserver/scripts/squad_start.sh
+           dest: /home/steam/squad/squad_start.sh
+           owner: steam
+           group: steam
+           mode: 0755
