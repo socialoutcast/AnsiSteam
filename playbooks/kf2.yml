@@ -3,23 +3,23 @@
    become: true
    become_user: steam
    tasks:
-   - name: Install KillingFloor 2
-     shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/kf2 +app_update 232130 +quit
+      - name: Install KillingFloor 2
+        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/kf2 +app_update 232130 +quit
 
-   - name: Install Server.cfg
-     copy:
-         src: "{{ item }}"
-         dest: /home/steam/kf2/KFGame/Config/
-         owner: steam
-         group: steam
-         mode: 0755
-         with_fileglob:
-          - ~/steamserver/configs/*.ini
+      - name: Install Server.cfg
+        copy:
+          src: "{{ item }}"
+          dest: /home/steam/kf2/KFGame/Config/
+          owner: steam
+          group: steam
+          mode: 0755
+        with_fileglob:
+          - "~/steamserver/configs/*.ini"
 
-   - name: Install Scripts
-     copy:
-        src: ~/steamserver/scripts/kf2_start.sh
-        dest: /home/steam/kf2/kf2_start.sh
-        owner: steam
-        group: steam
-        mode: 0755
+      - name: Install Scripts
+        copy:
+          src: ~/steamserver/scripts/kf2_start.sh
+          dest: /home/steam/kf2/kf2_start.sh
+          owner: steam
+          group: steam
+          mode: 0755
