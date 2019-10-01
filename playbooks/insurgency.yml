@@ -1,7 +1,0 @@
----
- - hosts: insurgency
-   become: true
-   become_user: steam
-   tasks:
-     - name: Install Insurgency
-       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/sandstorm +app_update 581330 +validate +quit

@@ -19,6 +19,24 @@
         - libstdc++.i686
         - screen
         - yum-cron
+        - git-core
+        - zlib
+        - zlib-devel
+        - gcc-c++
+        - patch
+        - readline
+        - readline-devel
+        - libyaml-devel
+        - libffi-devel
+        - openssl-devel
+        - make
+        - bzip2
+        - autoconf
+        - automake
+        - libtool
+        - bison
+        - curl
+        - sqlite-devel
 
    - name: Yum Update
      yum:
