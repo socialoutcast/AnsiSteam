@@ -50,5 +50,18 @@
          repo: 'https://github.com/Joe-Klauza/sandstorm-admin-wrapper.git'
          dest: '/home/steam/sandstorm-admin-wrapper'
 
-     - name: Move Steam
-       command: mv /tmp/steamcmd/steamcmd.sh /home/steam/sandstorm-admin-wrapper/steamcmd/installation/
+     - name: Download steamcmd
+       unarchive:
+         remote_src: yes
+         src: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+         dest: /home/steam/sandstorm-admin-wrapper/steamcmd/installation
+
+     - name: Change Owner of steamcmd
+       file:
+         dest: /home/steam/sandstorm-admin-wrapper/steamcmd/installation
+         owner: steam
+         mode: 0755
+         recurse: yes
+
+     - name: Setup SteamCMD
+       shell: /home/steam/sandstorm-admin-wrapper/steamcmd/installation/steamcmd.sh +login anonymous +quit
