@@ -38,7 +38,7 @@
         group: steam
         mode: 0755
       with_fileglob:
-          - "~/steamserver/configs/*.ini"
+          - "~/steamserver/configs/kf2/*.ini"
 
     - name: Install Scripts
       copy:
