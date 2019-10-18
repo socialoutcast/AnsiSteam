@@ -15,7 +15,7 @@
 
      - name: Install Bash_Profile
        copy:
-         src: configs/sandstorm/.bash_profile
+         src: ~/steamserver/configs/sandstorm/.bash_profile
          dest: /home/steam/.bash_profile
          owner: steam
          group: steam
@@ -35,7 +35,7 @@
 
      - name: Disable generating of documents
        copy:
-         src: configs/sandstorm/.gemrc
+         src: ~/steamserver/configs/sandstorm/.gemrc
          dest: /home/steam/.gemrc
          owner: steam
          group: steam
