@@ -14,7 +14,6 @@
         - glibc.i686
         - libstdc++.i686
         - screen
-        - yum-cron
         - git-core
         - zlib
         - zlib-devel
