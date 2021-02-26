@@ -1,5 +1,5 @@
 ---
- - hosts: rs2
+ - hosts: rising_storm_2
    become: true
    become_user: steam
    tasks:
