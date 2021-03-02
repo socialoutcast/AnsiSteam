@@ -20,7 +20,7 @@
       validate_certs: False
       name: "{{ VMName }}"
       template: "{{ Template }}"
-      datacenter: s3cn3t
+      datacenter:
       folder: "{{ Folder }}"
       state: poweredon
       wait_for_ip_address: no
