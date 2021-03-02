@@ -1,0 +1,26 @@
+---
+- hosts: esxi
+  vars_prompt:
+    - name: VMName
+      prompt: What is the name of this VM?
+      private: no
+    - name: Folder
+      prompt: What folder are we in?
+      private: no
+    - name: Template
+      private: no
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Clone GM to VM
+    vmware_guest:
+      hostname:
+      username:
+      password:
+      validate_certs: False
+      name: "{{ VMName }}"
+      template: "{{ Template }}"
+      datacenter: s3cn3t
+      folder: "{{ Folder }}"
+      state: poweredon
+      wait_for_ip_address: no
