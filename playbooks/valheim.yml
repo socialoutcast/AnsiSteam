@@ -38,4 +38,4 @@
         group: steam
         mode: 0755
         with_fileglob:
-          - ~/steamserver/plugins/Val/*
+          - ~/steamserver/plugins/Val/*.dll
