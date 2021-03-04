@@ -30,3 +30,11 @@
         remote_src: yes
         src: https://github.com/valheimPlus/ValheimPlus/releases/download/0.9/UnixServer.tar.gz
         dest: ~/Valheim
+      copy:
+        src: "{{ item }}"
+        dest: ~/Valheim/BepInEx/plugins/
+        owner: steam
+        group: steam
+        mode: 0755
+        with_fileglob:
+          - "~/steamserver/plugins/Val/*.dll"
