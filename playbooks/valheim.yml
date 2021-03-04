@@ -32,7 +32,7 @@
         dest: ~/Valheim
     - name: Install Other Mods
       copy:
-          src: {{ item }}
+        src: {{ item }}
         dest: ~/Valheim/BepInEx/plugins/
         owner: steam
         group: steam
