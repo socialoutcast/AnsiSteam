@@ -32,8 +32,10 @@
         dest: ~/Valheim
     - name: Install Other Mods
       copy:
-        src: ~/steamserver/plugins/Val/*.dll
+        src: "{{ item }}"
         dest: ~/Valheim/BepInEx/plugins/
         owner: steam
         group: steam
         mode: 0755
+        with_fileglob:
+          - ~/steamserver/plugins/Val/*
