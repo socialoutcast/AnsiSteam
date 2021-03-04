@@ -27,6 +27,6 @@
       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/Valheim +app_update 896660 +validate +quit
     - name: Download MODS!
       unarchive:
-        remote_sre: yes
+        remote_src: yes
         src: https://github.com/valheimPlus/ValheimPlus/releases/download/0.9/UnixServer.tar.gz
         dest: ~/Valheim
