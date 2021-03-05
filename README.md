@@ -1,4 +1,4 @@
-# steamserver
+# AnsiSteam
 Ansible management for steam servers
 This tool is designed for CentOS 8, Windows 10, and ESXi 6.5 currently.
 Several assumptions are made if you are using this tool.
