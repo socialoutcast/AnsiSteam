@@ -25,18 +25,12 @@
       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +quit
     - name: Install Valheim
       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/Valheim +app_update 896660 +validate +quit
-    - name: Install BepInEx
+    - name: Download Val+!
       unarchive:
         remote_src: yes
-        src: https://valheim.thunderstore.io/package/download/denikson/BepInExPack_Valheim/5.4.800/
-        dest: ~/Valheim/
-    - name: Move Mod File
-      shell: mv ~/Valheim/BepInExPack_Valheim/* ~/Valheim/
-    - name: Delete Un-Used Files
-      ansible.builtin.file:
-        path: ~/Valheim/BepInExPack_Valheim/
-        state: absent
-    - name: Install Mods!
+        src: https://github.com/valheimPlus/ValheimPlus/releases/download/0.9/UnixServer.tar.gz
+        dest: ~/Valheim
+    - name: Install Other Mods
       copy:
         src: "{{ item }}"
         dest: ~/Valheim/BepInEx/plugins/
@@ -45,8 +39,3 @@
         mode: 0755
       with_fileglob:
          - "~/steamserver/plugins/Val/*.dll"
-    - name: Make Shit Executable
-      file:
-        dest: ~/Valheim/start_server_bepinex.sh
-        mode: 0755
-        recurse: no
