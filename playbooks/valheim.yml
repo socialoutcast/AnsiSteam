@@ -44,7 +44,7 @@
         group: steam
         mode: 0755
       with_fileglob:
-         - "~/steamserver/plugins/Val/*.dll"
+         - "~/AnsiSteam/plugins/Val/*.dll"
     - name: Make Shit Executable
       file:
         dest: ~/Valheim/start_server_bepinex.sh
