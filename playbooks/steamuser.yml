@@ -33,6 +33,7 @@
         - curl
         - sqlite-devel
         - unzip
+        - wget
 
    - name: Yum Update
      yum:
