@@ -7,12 +7,10 @@
        git:
          repo: 'git://github.com/sstephenson/rbenv.git'
          dest: /home/steam/.rbenv/
-
      - name: Clone ruby build
        git:
          repo: 'git://github.com/sstephenson/ruby-build.git'
          dest: /home/steam/.rbenv/plugins/ruby-build/
-
      - name: Install Bash_Profile
        copy:
          src: ~/AnsiSteam/configs/sandstorm/.bash_profile
@@ -20,19 +18,15 @@
          owner: steam
          group: steam
          mode: 0644
-
      - name: Source Profile
        shell:
          source /home/steam/.bash_profile
-
      - name: Install RUBY!
        shell:
          /home/steam/.rbenv/bin/rbenv install -v 2.6.3
-
      - name: Set Global Ruby
        shell:
          /home/steam/.rbenv/bin/rbenv global 2.6.3
-
      - name: Disable generating of documents
        copy:
          src: ~/AnsiSteam/configs/sandstorm/.gemrc
@@ -40,28 +34,23 @@
          owner: steam
          group: steam
          mode: 0644
-
      - name: Install Gems
        shell:
          /home/steam/.rbenv/versions/2.6.3/bin/gem install bundler
-
      - name: Clone Admin Wrapper
        git:
          repo: 'https://github.com/Joe-Klauza/sandstorm-admin-wrapper.git'
          dest: '/home/steam/sandstorm-admin-wrapper'
-
      - name: Download steamcmd
        unarchive:
          remote_src: yes
          src: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
          dest: /home/steam/sandstorm-admin-wrapper/steamcmd/installation
-
      - name: Change Owner of steamcmd
        file:
          dest: /home/steam/sandstorm-admin-wrapper/steamcmd/installation
          owner: steam
          mode: 0755
          recurse: yes
-
      - name: Setup SteamCMD
        shell: /home/steam/sandstorm-admin-wrapper/steamcmd/installation/steamcmd.sh +login anonymous +quit

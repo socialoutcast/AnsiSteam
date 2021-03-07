@@ -1,0 +1,23 @@
+# USE AT YOUR OWN RISK! THIS CAN BE VERY DANGEROUS TO USE IF USED INCORRECTLY!
+---
+- hosts: esxi
+  vars_prompt:
+    - name: VMName
+      private: no
+    - name: Host
+      private: no
+    - name: User
+      private: no
+    - name: Password
+      private: yes
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Delete VM
+    vmware_guest:
+      hostname: "{{ Host }}"
+      username: "{{ User }}"
+      password: "{{ Password }}"
+      validate_certs: False
+      name: "{{ VMName }}"
+      state: absent
