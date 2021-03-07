@@ -1,5 +1,5 @@
 ---
- - hosts: valheim
+ - hosts: linux
    become: true
    become_user: steam
    tasks:

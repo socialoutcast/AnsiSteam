@@ -1,15 +1,27 @@
 ---
- - hosts: squad
+ - hosts: linux
    become: true
    become_user: steam
    tasks:
+      - name: Download steamcmd
+        unarchive:
+          remote_src: yes
+          src: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+          dest: /tmp/steamcmd
+      - name: Change Owner of steamcmd
+        file:
+          dest: /tmp/steamcmd/
+          owner: steam
+          mode: 0755
+          recurse: yes
+      - name: Setup SteamCMD
+        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +quit
       - name: Install Squad
-        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/squad +app_update 403240 +validate +quit
-
-      - name: Install Server.cfg
+        shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/Squad +app_update 403240 +validate +quit
+      - name: Install Scripts
         copy:
-            src: "{{ item }}"
-            dest: /home/steam/squad/Squad/ServerConfig/
-            owner: steam
-            group: steam
-            mode: 0755
+          src: ~/AnsiSteam/scripts/squad_start.sh
+          dest: /home/steam/Squad/
+          owner: steam
+          group: steam
+          mode: 0755

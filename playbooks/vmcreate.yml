@@ -7,24 +7,26 @@
       private: no
     - name: Template
       private: no
+    - name: Datacenter
+      private: no
     - name: Host
       private: no
     - name: User
       private: no
-    - name: Pass
+    - name: Password
       private: yes
   connection: local
   gather_facts: no
   tasks:
-  - name: Clone GM to VM
+  - name: Create new VM
     vmware_guest:
       hostname: "{{ Host }}"
       username: "{{ User }}"
-      password: "{{ Pass }}"
+      password: "{{ Password }}"
       validate_certs: False
       name: "{{ VMName }}"
       template: "{{ Template }}"
-      datacenter: s3cn3t
+      datacenter: "{{ Datacenter }}"
       folder: "{{ Folder }}"
       state: poweredon
       wait_for_ip_address: no

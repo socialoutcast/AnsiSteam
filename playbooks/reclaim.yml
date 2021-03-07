@@ -1,5 +1,5 @@
 ---
- - hosts: linux*
+ - hosts: linux
    become: true
    tasks:
      - name: Reclaim SteamCMD Server
@@ -8,6 +8,7 @@
          state: absent
        with_items:
          - Steam
-         - squad
+         - Squad
          - sandstorm-admin-wrapper
          - kf2
+         - Valheim

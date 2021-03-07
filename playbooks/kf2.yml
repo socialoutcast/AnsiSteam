@@ -1,5 +1,5 @@
 ---
- - hosts: kf2
+ - hosts: linux
    become: true
    become_user: steam
    tasks:
@@ -9,27 +9,22 @@
         state: directory
         owner: steam
         mode: 0755
-
     - name: Download steamcmd
       unarchive:
         remote_src: yes
         src: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
         dest: /tmp/steamcmd
-
     - name: Change Owner of steamcmd
       file:
         dest: /tmp/steamcmd/
         owner: steam
         mode: 0755
         recurse: yes
-
     - name: Setup SteamCMD
       become_user: steam
       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +quit
-
     - name: Install KillingFloor 2
       shell: /tmp/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/kf2 +app_update 232130 +quit
-
     - name: Install Server.cfg
       copy:
         src: "{{ item }}"
@@ -38,11 +33,10 @@
         group: steam
         mode: 0755
       with_fileglob:
-          - "~/steamserver/configs/kf2/*.ini"
-
+          - "~/AnsiSteam/configs/kf2/*.ini"
     - name: Install Scripts
       copy:
-        src: ~/steamserver/scripts/kf2_start.sh
+        src: ~/AnsiSteam/scripts/kf2_start.sh
         dest: /home/steam/kf2/kf2_start.sh
         owner: steam
         group: steam

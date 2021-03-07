@@ -1,5 +1,5 @@
 ---
- - hosts: linux*
+ - hosts: linux
    become: true
    tasks:
    - name: Setup New Steam User
