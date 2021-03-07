@@ -8,4 +8,4 @@ Several assumptions are made if you are using this tool.
    4. You know how to setup a server.inv file for the servers you want to deploy to.
    5. You MUST pip install or pip3 install Pyvmomi.
    6. You MUST have esxi 6.5 or later preferably with VCenter Running using Templates and Folders.
-Simply clone and either run the playbook on a specific host or create an server.inv file for the inventory.
+Simply clone and either run the playbook on a specific host or create a server.inv file for the inventory.
