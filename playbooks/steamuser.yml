@@ -5,7 +5,6 @@
    - name: Setup New Steam User
      user:
        name: steam
-
    - name: Install Libraries
      yum:
        name: "{{ packages }}"
@@ -34,7 +33,6 @@
         - sqlite-devel
         - unzip
         - wget
-
    - name: Yum Update
      yum:
        name: '*'
