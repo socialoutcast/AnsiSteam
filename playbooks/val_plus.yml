@@ -28,7 +28,7 @@
     - name: Download Val+!
       unarchive:
         remote_src: yes
-        src: https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.3/UnixServer.tar.gz
+        src: https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.4/UnixServer.tar.gz
         dest: ~/Valheim
     - name: Install Other Mods
       copy:
