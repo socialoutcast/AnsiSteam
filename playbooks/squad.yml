@@ -3,6 +3,12 @@
    become: true
    become_user: steam
    tasks:
+      - name: Create steam DIR
+        file:
+          path: /tmp/steamcmd
+          state: directory
+          owner: steam
+          mode: 0755
       - name: Download steamcmd
         unarchive:
           remote_src: yes
