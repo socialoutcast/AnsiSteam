@@ -39,3 +39,15 @@
         mode: 0755
       with_fileglob:
          - "~/AnsiSteam/plugins/Val/*.dll"
+    - name: Install Scripts
+      copy:
+        src: ~/AnsiSteam/scripts/valheim_start.sh
+        dest: /home/steam/Valheim/valheim_start.sh
+        owner: steam
+        group: steam
+        mode: 0755
+    - name: Make Shit Executable
+      file:
+        dest: ~/Valheim/start_server_bepinex.sh
+        mode: 0755
+        recurse: no

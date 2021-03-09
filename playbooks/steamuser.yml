@@ -33,6 +33,7 @@
         - sqlite-devel
         - unzip
         - wget
+        - htop
    - name: Yum Update
      yum:
        name: '*'
