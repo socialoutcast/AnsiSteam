@@ -46,7 +46,7 @@
       with_fileglob:
          - "~/AnsiSteam/plugins/Val/*.dll"
     - name: Install Scripts
-        copy:
+      copy:
         src: ~/AnsiSteam/scripts/valheim_start.sh
         dest: /home/steam/Valheim/valheim_start.sh
         owner: steam
